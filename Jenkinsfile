@@ -34,12 +34,12 @@ pipeline {
                 script {
                     if (params.action == 'apply') {
                         if (!params.autoApprove) {
-                            def plan = readFile 'tfplan.txt'
+                            def plan = readFile 'plan.txt'
                             input message: "Do you want to apply the plan?",
                             parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                         }
 
-                        sh 'terraform ${action} -input=false tfplan'
+                        sh 'terraform ${action} -input=false plan'
                     } else if (params.action == 'destroy') {
                         sh 'terraform ${action} --auto-approve'
                     } else {
