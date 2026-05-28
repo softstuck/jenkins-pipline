@@ -32,5 +32,5 @@ variable "instance_type" {
 variable "name_tag" {
    type        = string
    description = "Name of the EC2 instance"
-   default     = "terra-jenknis-EC2"
+   default     = "terra-jenkins-EC2"
 }
