@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/softstuck/jenkins-pipline/blob/main/Jenkinsfile'
+                git branch: 'main', url: 'https://github.com/softstuck/jenkins-scripts.git'
             }
         }
         stage('Terraform init') {
